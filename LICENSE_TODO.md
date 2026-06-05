@@ -1,4 +1,4 @@
-# License TODO
+# License 
 
 The public license has not been selected yet.
 
