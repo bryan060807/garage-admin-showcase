@@ -1,0 +1,56 @@
+{
+  "generatedFor": "garage-admin-showcase",
+  "publicSafe": true,
+  "source": "mock-data",
+  "task": {
+    "id": "codex-demo-001",
+    "title": "Harden demo health response handling",
+    "requestedBy": "operator",
+    "scope": "mock-reference-package",
+    "status": "validated"
+  },
+  "flow": [
+    {
+      "step": "inspect",
+      "result": "Reviewed demo service contract and existing validation expectations."
+    },
+    {
+      "step": "patch",
+      "result": "Added structured handling for healthy, degraded, protected, and unknown health states."
+    },
+    {
+      "step": "validate",
+      "result": "Ran JSON parse checks and searched generated package for forbidden public content patterns."
+    },
+    {
+      "step": "report",
+      "result": "Separated verified mock-package checks from unverified live-runtime state."
+    }
+  ],
+  "validation": {
+    "passed": [
+      "Mock JSON parsed successfully.",
+      "No raw secrets included.",
+      "No live private endpoints included."
+    ],
+    "notVerified": [
+      "No live private runtime was contacted.",
+      "No production restart was requested.",
+      "No authenticated private behavior was exercised."
+    ]
+  },
+  "auditSummary": {
+    "changedFiles": [
+      "showcase/README.md",
+      "showcase/ARCHITECTURE.md",
+      "showcase/SECURITY.md",
+      "showcase/DEMO_SCRIPT.md",
+      "showcase/SUBMISSION_COPY.md",
+      "showcase/diagram/architecture.mmd",
+      "showcase/mock-data/*.json",
+      "showcase/REDACTION_CHECKLIST.md"
+    ],
+    "risk": "public-docs-and-mock-data-only",
+    "requiresOperatorApprovalForLiveUse": true
+  }
+}

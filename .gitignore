@@ -1,0 +1,40 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Secrets and local config
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cert
+id_rsa
+id_ed25519
+
+# Logs and runtime output
+*.log
+logs/
+*.pid
+*.seed
+*.stackdump
+
+# Dependency/build artifacts, in case a static preview is added later
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.parcel-cache/
+.next/
+out/
+
+# Local publication staging
+publish-staging/
+tmp/
+temp/

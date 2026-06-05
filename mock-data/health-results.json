@@ -1,0 +1,48 @@
+{
+  "generatedFor": "garage-admin-showcase",
+  "publicSafe": true,
+  "source": "mock-data",
+  "results": [
+    {
+      "serviceId": "demo-service-a",
+      "checkedAt": "2026-06-05T12:00:00Z",
+      "status": "healthy",
+      "latencyMs": 42,
+      "freshness": "current",
+      "hostBoundary": "windows-runtime",
+      "evidence": {
+        "httpStatus": 200,
+        "bodyShape": ["ok", "service", "uptimeSeconds"],
+        "dependencyStatus": "healthy"
+      },
+      "unknowns": []
+    },
+    {
+      "serviceId": "demo-service-b",
+      "checkedAt": "2026-06-05T12:00:00Z",
+      "status": "degraded",
+      "latencyMs": 184,
+      "freshness": "current",
+      "hostBoundary": "windows-runtime",
+      "evidence": {
+        "httpStatus": 200,
+        "bodyShape": ["ok", "service", "warnings"],
+        "dependencyStatus": "degraded"
+      },
+      "unknowns": ["Dependency warning is mocked for demo purposes."]
+    },
+    {
+      "serviceId": "demo-ingress",
+      "checkedAt": "2026-06-05T12:00:00Z",
+      "status": "protected",
+      "latencyMs": 93,
+      "freshness": "current",
+      "hostBoundary": "fedora-control-plane",
+      "evidence": {
+        "httpStatus": 401,
+        "interpretation": "Auth protection is present. This does not prove full application health."
+      },
+      "unknowns": ["Authenticated behavior is not exercised in the public demo."]
+    }
+  ]
+}

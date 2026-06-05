@@ -1,0 +1,31 @@
+{
+  "generatedFor": "garage-admin-showcase",
+  "publicSafe": true,
+  "source": "mock-data",
+  "policy": {
+    "maxLines": 20,
+    "redactedFields": ["authorization", "cookie", "apiKey", "token", "password", "connectionString"],
+    "containsLiveLogs": false
+  },
+  "excerpts": [
+    {
+      "serviceId": "demo-service-a",
+      "hostBoundary": "windows-runtime",
+      "capturedAt": "2026-06-05T12:05:00Z",
+      "lines": [
+        "2026-06-05T12:04:51.103Z info demo-service-a health_check ok latencyMs=41 requestId=req-demo-001",
+        "2026-06-05T12:04:52.118Z info demo-service-a dependency_check ok target=demo-postgres requestId=req-demo-002",
+        "2026-06-05T12:04:53.006Z info demo-service-a operator_probe ok source=garage-admin-showcase"
+      ]
+    },
+    {
+      "serviceId": "demo-service-b",
+      "hostBoundary": "windows-runtime",
+      "capturedAt": "2026-06-05T12:05:00Z",
+      "lines": [
+        "2026-06-05T12:04:43.220Z warn demo-service-b dependency_check degraded dependency=demo-postgres retryInMs=5000 requestId=req-demo-010",
+        "2026-06-05T12:04:48.231Z info demo-service-b health_check degraded warnings=1 requestId=req-demo-011"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "generatedFor": "garage-admin-showcase",
+  "publicSafe": true,
+  "source": "mock-data",
+  "services": [
+    {
+      "id": "demo-service-a",
+      "displayName": "Demo Service A",
+      "host": "demo-windows-host",
+      "hostBoundary": "windows-runtime",
+      "runtime": "pm2",
+      "localUrl": "http://127.0.0.1:4101/health",
+      "allowedEvidence": ["health", "status", "capped_logs"],
+      "allowedActions": ["guarded_restart_request"],
+      "notes": "Mock Windows runtime service used for public walkthroughs."
+    },
+    {
+      "id": "demo-service-b",
+      "displayName": "Demo Service B",
+      "host": "demo-windows-host",
+      "hostBoundary": "windows-runtime",
+      "runtime": "pm2",
+      "localUrl": "http://127.0.0.1:4102/health",
+      "allowedEvidence": ["health", "status"],
+      "allowedActions": [],
+      "notes": "Mock read-only runtime service."
+    },
+    {
+      "id": "demo-postgres",
+      "displayName": "Demo Postgres",
+      "host": "demo-fedora-control-plane",
+      "hostBoundary": "fedora-control-plane",
+      "runtime": "managed-service-pattern",
+      "localUrl": "localhost",
+      "allowedEvidence": ["status", "dependency_health"],
+      "allowedActions": [],
+      "notes": "Placeholder for durable storage ownership. No connection string is included."
+    },
+    {
+      "id": "demo-ingress",
+      "displayName": "Demo Ingress",
+      "host": "demo-fedora-control-plane",
+      "hostBoundary": "fedora-control-plane",
+      "runtime": "ingress-pattern",
+      "publicUrl": "https://example.invalid",
+      "allowedEvidence": ["route_inventory", "status"],
+      "allowedActions": [],
+      "notes": "Placeholder front-door route. Not a working private endpoint."
+    }
+  ]
+}

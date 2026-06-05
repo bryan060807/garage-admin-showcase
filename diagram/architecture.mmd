@@ -1,0 +1,47 @@
+flowchart LR
+  subgraph PublicDemo["Sanitized mock package boundary - no live control endpoints"]
+    Operator["ChatGPT / Codex operator"]
+    UI["Garage Admin UI"]
+    Memory["File-backed operational memory"]
+    Bridge["Allowlisted bridge contracts"]
+    Audit["Validation and audit record"]
+
+    subgraph Windows["demo-windows-host"]
+      PM2["PM2 runtime supervisor"]
+      AppA["demo-service-a"]
+      AppB["demo-service-b"]
+      WinHelper["Windows runtime helper"]
+    end
+
+    subgraph Fedora["demo-fedora-control-plane"]
+      Ingress["Mock ingress - example.invalid"]
+      Workers["Fedora worker services"]
+      Postgres["demo-postgres"]
+      Storage["Durable storage pattern"]
+    end
+  end
+
+  Operator --> UI
+  Operator -->|Codex patch / verify workflow| Audit
+  UI --> Memory
+  UI --> Bridge
+  Bridge -->|read-only evidence| WinHelper
+  WinHelper --> PM2
+  PM2 --> AppA
+  PM2 --> AppB
+  Bridge -->|guarded control-plane evidence only| Workers
+  Workers --> Postgres
+  Workers --> Storage
+  Ingress --> UI
+  Bridge --> Audit
+  Memory --> Audit
+
+  classDef boundary fill:#f5f5f5,stroke:#555,stroke-width:1px;
+  classDef guarded fill:#e8f4ff,stroke:#2563eb,stroke-width:1px;
+  classDef data fill:#f0fdf4,stroke:#16a34a,stroke-width:1px;
+  classDef action fill:#fff7ed,stroke:#ea580c,stroke-width:1px;
+
+  class PublicDemo boundary;
+  class Bridge,WinHelper,Workers guarded;
+  class Memory,Postgres,Storage data;
+  class Audit action;

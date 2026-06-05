@@ -1,0 +1,36 @@
+{
+  "generatedFor": "garage-admin-showcase",
+  "publicSafe": true,
+  "source": "mock-data",
+  "entries": [
+    {
+      "id": "active-context",
+      "type": "ACTIVE_CONTEXT",
+      "title": "Current Demo Context",
+      "summary": "Garage Admin public demo is running in mock mode with no live private endpoints.",
+      "verified": [
+        "Mock service inventory loaded.",
+        "Mock health results loaded.",
+        "Redaction checklist available."
+      ],
+      "unknown": [
+        "Public repository URL is not set.",
+        "Demo video URL is not set.",
+        "Final screenshots require manual redaction review."
+      ]
+    },
+    {
+      "id": "project-update",
+      "type": "PROJECT_UPDATE",
+      "title": "Showcase Package",
+      "summary": "Prepare a sanitized OpenAI Showcase submission package for the Garage Admin architecture.",
+      "nextAction": "Review generated docs, add public links, and capture sanitized screenshots."
+    },
+    {
+      "id": "decision-demo-boundary",
+      "type": "DECISION",
+      "title": "Use Mock Public Demo Boundary",
+      "summary": "The public artifact demonstrates the architecture using mock services and placeholders instead of exposing private infrastructure."
+    }
+  ]
+}
