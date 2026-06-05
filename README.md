@@ -2,7 +2,7 @@
 
 **A guarded AI operator console for real infrastructure**
 
-> Public-safe package note: this `showcase/` directory is a sanitized reference architecture and demo package. It is not the live private Garage Admin control plane and contains no working endpoint capable of operating private infrastructure.
+> Public-safe package note: this repository is a sanitized reference architecture and demo package. It is not the live private Garage Admin control plane and contains no working endpoint capable of operating private infrastructure.
 
 ## Problem Statement
 
@@ -16,7 +16,7 @@ The private architecture coordinates Windows app runtimes, Fedora control-plane 
 
 Garage Admin is a guarded operator console. It gives a human operator and AI assistant shared visibility into services, memory, health checks, capped logs, and maintenance tasks. The assistant can help interpret evidence, draft plans, and produce patches, but operational actions remain narrow, allowlisted, validated, and auditable.
 
-The core idea is not "AI with shell access." The core idea is AI-assisted operations through small contracts:
+The core idea is not “AI with shell access.” The core idea is AI-assisted operations through small contracts:
 
 - Read current operational memory.
 - Discover known services.
@@ -30,16 +30,18 @@ The core idea is not "AI with shell access." The core idea is AI-assisted operat
 
 - `ARCHITECTURE.md`: reference architecture and contract pattern.
 - `SECURITY.md`: public-release safety model and forbidden content.
-- `DEMO_SCRIPT.md`: 35 minute walkthrough using mock evidence.
+- `DEMO_SCRIPT.md`: 3–5 minute walkthrough using mock evidence.
 - `SUBMISSION_COPY.md`: Showcase-ready fields and manual TODOs.
 - `FORM_READY_ANSWERS.md`: copy/paste-ready Showcase draft answers.
 - `FINAL_SUBMISSION_CHECKLIST.md`: final form, repo, media, and security checks.
 - `REPO_RELEASE_PLAN.md`: local-only public repository packaging plan.
 - `PUBLICATION_COMMANDS.md`: exact manual publication commands with a pre-push safety gate.
-- `LICENSE_TODO.md`: placeholder until Bryan selects a public license.
+- `COVER_IMAGE_BRIEF.md`: safe cover image concepts and redaction requirements.
+- `SCREENSHOT_SHOT_LIST.md`: screenshot plan and upload review checks.
+- `REDACTION_CHECKLIST.md`: screenshot, video, and public repository review checklist.
+- `LICENSE.md`: MIT License for this sanitized reference package.
 - `diagram/architecture.mmd`: Mermaid architecture diagram.
 - `mock-data/`: public-safe sample service, health, log, memory, and Codex task fixtures.
-- `REDACTION_CHECKLIST.md`: screenshot, video, and public repository review checklist.
 
 ## Architecture Summary
 
@@ -73,13 +75,13 @@ OpenAI and Codex are used as assistant layers over the guarded system:
 - ChatGPT-style interaction helps the operator ask operational questions, compare evidence, and plan next steps.
 - Codex inspects code, makes targeted patches, runs focused validation, and reports what was or was not verified.
 - The assistant consumes curated operational memory and bounded tool outputs rather than raw secrets or unrestricted host access.
-- The operator remains responsible for approving state-changing actions and for final production rollout decisions.
+- The operator remains responsible for approving state-changing actions and final production rollout decisions.
 
 This package does not claim OpenAI endorsement or Showcase acceptance.
 
 ## Demo Flow
 
-The companion `DEMO_SCRIPT.md` describes a 35 minute walkthrough:
+The companion `DEMO_SCRIPT.md` describes a 3–5 minute walkthrough:
 
 1. Open startup-visible memory.
 2. Review service inventory.
@@ -93,7 +95,7 @@ The mock data in `mock-data/` supports the walkthrough without touching live inf
 
 ## What Is Mocked vs. Real
 
-**Real architecture pattern**
+### Real architecture pattern
 
 - Split Windows/Fedora responsibilities.
 - Operational memory concept.
@@ -102,7 +104,7 @@ The mock data in `mock-data/` supports the walkthrough without touching live inf
 - Codex-mediated maintenance workflow.
 - Audit and redaction requirements.
 
-**Mocked in this package**
+### Mocked in this package
 
 - Service names and inventory.
 - Health results.
@@ -111,27 +113,26 @@ The mock data in `mock-data/` supports the walkthrough without touching live inf
 - Codex task result.
 - Hostnames, routes, and infrastructure identifiers.
 
-**Not included**
+### Not included
 
 - Private source code.
 - Raw `.env` files.
 - PM2 metadata.
 - Real logs.
 - Live hostnames or tunnel routes.
-- Working endpoint that can control the private system.
+- Working endpoints that can control the private system.
 
 ## Submission Notes
 
 This package is intended to support an OpenAI Showcase submission as a reference architecture and demo. Before submission, Bryan should add only the manual public fields that cannot be generated safely here:
 
-- Public repo URL: `https://github.com/bryan060807/garage-admin-showcase.git`.
+- Public repo URL: `https://github.com/bryan060807/garage-admin-showcase.git`
 - TODO: hosted/demo URL or N/A.
 - TODO: video URL, if recorded.
 - TODO: screenshot/cover image URL, after redaction review.
 - TODO: submitter identity.
 - TODO: public contact.
 - TODO: website/social link, if desired.
-- TODO: license choice, if a public repository is published.
 
 ## How To Submit Or Publish
 
@@ -145,3 +146,7 @@ Use these files for final local preparation:
 - `PUBLICATION_COMMANDS.md`: local commands for Bryan to initialize, check, commit, and push only after final review.
 
 Do not publish until the final security review passes and Bryan has filled only the allowed public TODO fields.
+
+## License
+
+This sanitized reference package is released under the MIT License. The private Garage Admin/AIBRY control plane and live infrastructure are not included.
