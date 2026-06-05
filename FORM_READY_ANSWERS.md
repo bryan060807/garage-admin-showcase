@@ -74,20 +74,20 @@ Character count: 577
 
 ## Author Display Name
 
-TODO submitter identity
+Bryan / AIBRY
 
 ## Cover Image URL
 
-TODO screenshot/cover image URL
+https://raw.githubusercontent.com/bryan060807/garage-admin-showcase/main/assets/garage-admin-architecture-cover.png
 
 ## Video URL
 
-TODO video URL
+N/A
 
 ## Website / Social
 
-TODO website/social link
+https://github.com/bryan060807
 
 ## Public Contact
 
-TODO public contact
+bryan@aibry.shop
